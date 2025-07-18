@@ -20,18 +20,17 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # Install pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      # Install Bun
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          version: 10.6.2
+          bun-version: 1.2.18
 
       # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20.19.2
-          cache: "pnpm"
 
       - name: Install Dependencies
         run: bun install --frozen-lockfile
@@ -46,4 +45,4 @@ jobs:
 
       # Build the Next.js app via Turborepo
       - name: Build
-        run: pnpm build
+        run: bun run build
