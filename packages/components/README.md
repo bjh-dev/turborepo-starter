@@ -5,6 +5,7 @@ This package contains reusable content components with integrated Sanity CMS sch
 ## 🎯 Overview
 
 Each component includes:
+
 - **Sanity Schema**: Content structure definition for the CMS
 - **GROQ Query**: Data fetching fragments for Sanity
 - **React Component**: UI implementation with TypeScript
@@ -21,6 +22,7 @@ bun turbo gen component
 ```
 
 Follow the prompts to:
+
 1. Enter a component name (e.g., `hero`, `testimonial`)
 2. Choose a display name (e.g., `Hero Section`)
 3. Select a template (Basic, Hero, Card List, Testimonial, or Custom)
@@ -50,6 +52,7 @@ export default function HomePage() {
 ## 📋 Available Templates
 
 ### Hero Template ✅ Available
+
 Full hero section with heading, subheading, background image, and call-to-action button.
 
 ```tsx
@@ -65,6 +68,7 @@ Full hero section with heading, subheading, background image, and call-to-action
 **Fields**: `heading` (required), `subheading`, `image` (with alt text), `cta` (label + link)
 
 ### Basic Template
+
 Simple heading and text content - perfect for introductory sections.
 
 ```tsx
@@ -77,6 +81,7 @@ Simple heading and text content - perfect for introductory sections.
 **Fields**: `heading` (required), `text` (optional)
 
 ### Card List Template
+
 Section with a heading and an array of cards, each with title, description, image, and link.
 
 ```tsx
@@ -98,6 +103,7 @@ Section with a heading and an array of cards, each with title, description, imag
 **Fields**: `heading` (required), `cards[]` (array of card objects)
 
 ### Testimonial Template
+
 Quote with author information and optional author image.
 
 ```tsx
@@ -116,6 +122,7 @@ Quote with author information and optional author image.
 **Fields**: `quote` (required), `author` (name, title, company), `image` (with alt text)
 
 ### Custom Template
+
 Empty template with example comments - use when you need a completely custom component.
 
 **Features**: Includes commented examples of common Sanity field types for reference.
@@ -124,7 +131,7 @@ Empty template with example comments - use when you need a completely custom com
 
 Each generated component follows this structure:
 
-```
+```text
 packages/components/[component-name]/
 ├── [component-name].schema.ts    # Sanity schema definition
 ├── [component-name].query.ts     # GROQ query fragments
@@ -335,30 +342,36 @@ export const WithoutImage: Story = {
 ## 🔄 Development Workflow
 
 ### 1. Generate Component
+
 ```bash
 bun turbo gen component
 # Follow prompts
 ```
 
 ### 2. Customize Component
+
 Edit the generated files as needed:
+
 - Modify `.component.tsx` for UI changes
 - Update `.schema.ts` for content structure
 - Adjust `.types.ts` for type changes
 - Update `.query.ts` for data fetching
 
 ### 3. Test Your Changes
+
 ```bash
 bun test packages/components/[component-name]
 ```
 
 ### 4. View in Storybook
+
 ```bash
 bun storybook
 # Navigate to your component
 ```
 
 ### 5. Use in Your App
+
 ```tsx
 import { YourComponent } from '@repo/components/[component-name]'
 ```
@@ -366,18 +379,21 @@ import { YourComponent } from '@repo/components/[component-name]'
 ## 🏗️ Best Practices
 
 ### Component Design
+
 1. **Single Responsibility**: Each component should have one clear purpose
 2. **Flexible Props**: Use optional props and className for customization
 3. **Type Safety**: Leverage TypeScript for better development experience
 4. **Accessibility**: Include proper ARIA labels and semantic HTML
 
 ### Content Management
+
 1. **Required Fields**: Only make fields required when absolutely necessary
 2. **Validation**: Use Sanity validation rules for data integrity
 3. **Preview**: Configure schema previews for better CMS experience
 4. **Documentation**: Add helpful field descriptions in schemas
 
 ### Performance
+
 1. **Image Optimization**: Use Next.js Image component for production
 2. **Lazy Loading**: Consider lazy loading for below-the-fold components
 3. **Bundle Size**: Keep components lightweight and focused
@@ -387,7 +403,8 @@ import { YourComponent } from '@repo/components/[component-name]'
 
 ### Common Issues
 
-**TypeScript Errors**
+#### TypeScript Errors
+
 ```bash
 # Check types
 bun type-check
@@ -395,7 +412,8 @@ bun type-check
 # Fix type issues in component files
 ```
 
-**Missing Dependencies**
+#### Missing Dependencies
+
 ```bash
 # Install missing packages
 bun install
@@ -404,7 +422,8 @@ bun install
 bun pm ls --depth=0
 ```
 
-**Generator Issues**
+#### Generator Issues
+
 ```bash
 # Clear cache and reinstall
 bun clean
@@ -424,6 +443,7 @@ bun turbo gen component
 ## 📈 Future Enhancements
 
 ### Planned Features
+
 - [ ] More component templates (FAQ, Pricing, Contact forms)
 - [ ] Field generator for existing components
 - [ ] Migration helpers for schema updates
@@ -431,7 +451,9 @@ bun turbo gen component
 - [ ] Accessibility-focused templates
 
 ### Contributing
+
 When adding new components or templates:
+
 1. Use the generator to create the initial structure
 2. Follow existing patterns and conventions
 3. Add comprehensive tests
@@ -440,4 +462,4 @@ When adding new components or templates:
 
 ---
 
-For more information about the generator system, see the [main project README](../../README.md#generators). 
+For more information about the generator system, see the [main project README](../../README.md#generators).

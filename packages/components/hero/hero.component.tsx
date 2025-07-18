@@ -1,5 +1,5 @@
 import { cn } from '@repo/ui/lib/utils';
-import type { HeroComponentProps } from './hero.types';
+import { HeroComponentProps } from 'hero/hero.types.js';
 
 export const HeroComponent = ({ heading, subheading, image, imageAlt, cta, className }: HeroComponentProps) => {
 	return (

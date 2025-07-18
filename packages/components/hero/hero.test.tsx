@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
-import { HeroComponent } from './hero.component';
-import { describe, it, expect } from 'vitest';
-import '@testing-library/jest-dom'
+import { HeroComponent } from './hero.component.js';
+
+import { describe, expect, it } from 'vitest';
 
 describe('HeroComponent', () => {
 	it('renders hero content', () => {

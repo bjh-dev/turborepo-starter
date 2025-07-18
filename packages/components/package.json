@@ -2,17 +2,24 @@
 	"name": "@repo/components",
 	"version": "0.0.0",
 	"private": true,
+	"type": "module",
 	"exports": {
 		"./hero": "./hero/index.ts",
 		".": "./index.ts"
 	},
 	"scripts": {
 		"lint": "eslint . --max-warnings 0",
-		"type-check": "tsc --noEmit"
+		"type-check": "tsc --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest"
 	},
 	"devDependencies": {
 		"@repo/typescript-config": "*",
+		"@testing-library/jest-dom": "^6.4.2",
+		"@types/testing-library__jest-dom": "^6.0.0",
+		"@vitejs/plugin-react": "^4.3.4",
 		"eslint": "^8.0.0",
+		"jsdom": "^24.0.0",
 		"typescript": "^5.0.0"
 	},
 	"dependencies": {
