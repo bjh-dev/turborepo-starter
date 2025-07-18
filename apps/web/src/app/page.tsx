@@ -49,7 +49,7 @@ const features = [
 	{
 		icon: <Package className="w-5 h-5" />,
 		title: 'Monorepo Structure',
-		description: 'Efficient workspace management with pnpm',
+		description: 'Efficient workspace management with bun',
 	},
 ];
 
@@ -69,7 +69,7 @@ const techStack = [
 	{ name: 'Biome.js', color: 'bg-[#60a5fa] text-black', url: 'https://biomejs.dev' },
 	{ name: 'TypeScript', color: 'bg-[#3178c6] text-white', url: 'https://www.typescriptlang.org' },
 	{ name: 'Docker', color: 'bg-[#1d63ed] text-white', url: 'https://www.docker.com' },
-	{ name: 'pnpm', color: 'bg-[#f69220] text-black', url: 'https://pnpm.io' },
+	{ name: 'bun', color: 'bg-[#f69220] text-black', url: 'https://bun.sh' },
 ];
 
 export default function Home() {
@@ -277,10 +277,10 @@ export default function Home() {
 											$ <span className="text-blue-600 dark:text-blue-400">cd turborepo-starter</span>
 										</div>
 										<div className="text-foreground">
-											$ <span className="text-blue-600 dark:text-blue-400">pnpm install</span>
+											$ <span className="text-blue-600 dark:text-blue-400">bun install</span>
 										</div>
 										<div className="text-foreground">
-											$ <span className="text-purple-600 dark:text-purple-400 font-semibold">pnpm dev</span>
+											$ <span className="text-purple-600 dark:text-purple-400 font-semibold">bun dev</span>
 										</div>
 									</div>
 									<p className="text-sm text-muted-foreground">
@@ -335,10 +335,10 @@ export default function Home() {
 							<CardContent>
 								<div className="grid md:grid-cols-2 gap-4">
 									{[
-										{ cmd: 'pnpm build', desc: 'Build all packages and apps' },
-										{ cmd: 'pnpm lint', desc: 'Check code quality across the monorepo' },
-										{ cmd: 'pnpm format-write', desc: 'Auto-format all code with Biome' },
-										{ cmd: 'pnpm docker', desc: 'Run the entire stack with Docker' },
+										{ cmd: 'bun run build', desc: 'Build all packages and apps' },
+										{ cmd: 'bun run lint', desc: 'Check code quality across the monorepo' },
+										{ cmd: 'bun run format-write', desc: 'Auto-format all code with Biome' },
+										{ cmd: 'bun run docker', desc: 'Run the entire stack with Docker' },
 									].map((item) => (
 										<div
 											key={item.cmd}

@@ -89,7 +89,7 @@ bun turbo gen component
 
 ```bash
 # Generate a hero component
-pnpm turbo gen component
+bun turbo gen component
 # → Component name: hero
 # → Display name: Hero Section
 # → Template: Hero
@@ -272,7 +272,7 @@ This project is actively developed by [Bryan Hickey](https://github.com/bryanjhi
 
 - **Modern React Development** - Next.js, TypeScript, TailwindCSS
 - **Content Management Systems** - Sanity CMS, headless CMS architecture
-- **Monorepo Architecture** - Turborepo, pnpm workspaces
+- **Monorepo Architecture** - Turborepo
 - **Developer Experience** - Generators, tooling, automation
 
 **Connect:**
