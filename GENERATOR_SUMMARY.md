@@ -117,7 +117,7 @@ export default function HomePage() {
 }
 ```
 
-### 3. Add to Sanity Studio
+### 3. Add to Sanity Studio (Future)
 ```tsx
 // sanity.config.ts
 import { heroSchema } from '@repo/components/hero'
@@ -171,7 +171,7 @@ const pageQuery = groq`
 2. **Field Generator**: `pnpm turbo gen add-field` for existing components
 3. **Migration Generator**: Schema update helpers
 4. **Documentation Generator**: Auto-generate component docs
-5. **Integration Generator**: Generate Sanity studio integration code
+5. **Integration Generator**: Generate Sanity studio integration code (when studio app is added)
 
 ### Advanced Features
 1. **Schema Validation**: Generate Zod schemas alongside Sanity schemas
