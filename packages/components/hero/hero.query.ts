@@ -1,4 +1,4 @@
-import groq from 'groq'
+import groq from 'groq';
 
 export const heroFragment = groq`
   _type == "hero" => {
@@ -13,7 +13,7 @@ export const heroFragment = groq`
       link
     },
   }
-`
+`;
 
 // Example usage in a page query:
 // export const pageQuery = groq`
@@ -24,4 +24,4 @@ export const heroFragment = groq`
 //       ${otherBlockFragment}
 //     }
 //   }
-// ` 
+// `
