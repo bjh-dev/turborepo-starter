@@ -95,7 +95,7 @@ export default function Home() {
 								className="font-semibold text-muted-foreground hover:text-foreground transition-colors"
 								asChild
 							>
-								<Link href="https://github.com/ProductOfAmerica/turbo-starter">turbo-starter</Link>
+								<Link href="https://github.com/bjh-dev/turborepo-starter">turborepo-starter</Link>
 							</Button>
 						</div>
 
@@ -159,7 +159,7 @@ export default function Home() {
 								className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg shadow-blue-500/25 px-8 w-full sm:w-auto"
 								asChild
 							>
-								<Link href="https://github.com/ProductOfAmerica/turbo-starter" target="_blank">
+								<Link href="https://github.com/bjh-dev/turborepo-starter" target="_blank">
 									Get Started
 									<ArrowRight className="w-4 h-4" />
 								</Link>
@@ -270,7 +270,7 @@ export default function Home() {
 										<div className="text-foreground">
 											${' '}
 											<span className="text-blue-600 dark:text-blue-400">
-												git clone https://github.com/ProductOfAmerica/turbo-starter.git
+												git clone https://github.com/bjh-dev/turborepo-starter.git
 											</span>
 										</div>
 										<div className="text-foreground">
@@ -372,7 +372,7 @@ export default function Home() {
 								className="bg-foreground hover:bg-foreground/90 text-background px-8 w-full sm:w-auto"
 								asChild
 							>
-								<Link href="https://github.com/ProductOfAmerica/turbo-starter" target="_blank">
+								<Link href="https://github.com/bjh-dev/turborepo-starter" target="_blank">
 									<GitBranch className="w-4 h-4 mr-2" />
 									Clone Repository
 								</Link>
@@ -423,11 +423,11 @@ export default function Home() {
 						<div className="text-sm text-muted-foreground text-center">
 							Built by{' '}
 							<Link
-								href="https://github.com/ProductOfAmerica"
+								href="https://github.com/bjh-dev"
 								target="_blank"
 								className="font-medium text-foreground hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
 							>
-								ProductOfAmerica
+								bjh.dev
 							</Link>
 						</div>
 					</div>
