@@ -23,6 +23,7 @@ wrapped in a Docker-friendly setup.
 - **Biome.js**: A single, speedy tool for linting and formatting—no ESLint/Prettier mess.
 - **Docker Ready**: Spin up with [Docker Compose](https://docs.docker.com/compose/) for consistent environments.
 - **pnpm Workspaces**: Efficient dependency management with [pnpm](https://pnpm.io/).
+- **Smart Generators**: Built-in generators for rapid component and content development.
 
 Perfect for developers who want a cutting-edge stack without the setup hassle.
 
@@ -35,7 +36,10 @@ Perfect for developers who want a cutting-edge stack without the setup hassle.
 │   └── web/                # Next.js 15 app
 ├── packages/
 │   ├── ui/                 # Shadcn UI components & utilities
+│   ├── components/         # Content components with Sanity schemas
 │   └── typescript-config   # Shared TypeScript settings
+├── turbo/
+│   └── generators/         # Turborepo generators
 ├── docker-compose.yml      # Docker setup
 ├── turbo.json              # Turborepo config
 └── pnpm-workspace.yaml     # Workspace definitions
@@ -81,6 +85,55 @@ pnpm docker:build  # Rebuild containers
 
 ---
 
+## 🚀 Generators
+
+This starter includes powerful Turborepo generators to accelerate your development workflow.
+
+### Component Generator
+
+Generate complete content components with integrated Sanity CMS schemas:
+
+```bash
+pnpm turbo gen component
+```
+
+**What it creates:**
+- Sanity schema definition
+- GROQ query fragments
+- React component with TypeScript
+- Component tests
+- Storybook stories
+- Package exports
+
+**Available templates:**
+- **Basic**: Simple heading and text
+- **Hero**: Full hero section with image and CTA
+- **Card List**: Array of cards with images and links
+- **Testimonial**: Quote with author information
+- **Custom**: Empty template with examples
+
+**Example usage:**
+```bash
+# Generate a hero component
+pnpm turbo gen component
+# → Component name: hero
+# → Display name: Hero Section
+# → Template: Hero
+```
+
+📖 **Full Documentation**: [Components Package README](./packages/components/README.md)
+
+### Generator Features
+
+- **Smart Validation**: Ensures proper naming conventions
+- **Template Selection**: Choose from common patterns or start custom
+- **Automatic Integration**: Updates package exports and dependencies
+- **Type Safety**: Full TypeScript support throughout
+- **Testing Ready**: Generated test files with examples
+- **Documentation**: Storybook stories for each component
+
+---
+
 ## 🎨 Code Quality
 
 Keep your code sharp with [Biome.js](https://biomejs.dev/):
@@ -101,12 +154,13 @@ pnpm lint:fix     # Auto-fix issues
   npx turbo link
   ```
 - **Shared UI**: Reuse components and utilities from `packages/ui` across projects.
+- **Content Components**: Pre-built components with Sanity CMS integration.
 
 ---
 
 ## 🤝 Contribute
 
-Love this starter? Star it, fork it, or submit a PR! Let’s make it even better together.
+Love this starter? Star it, fork it, or submit a PR! Let's make it even better together.
 
 - [Issues](https://github.com/ProductOfAmerica/turbo-starter/issues)
 - [Docs](https://turbo.build/repo/docs)

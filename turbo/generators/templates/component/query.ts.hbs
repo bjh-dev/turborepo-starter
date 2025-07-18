@@ -1,0 +1,53 @@
+import groq from 'groq'
+
+export const {{camelCase name}}Fragment = groq`
+  _type == "{{kebabCase name}}" => {
+    _type,
+    _key,
+    {{#if (eq template "basic")}}
+    heading,
+    text,
+    {{/if}}
+    {{#if (eq template "hero")}}
+    heading,
+    subheading,
+    "image": image.asset->url,
+    "imageAlt": image.alt,
+    cta {
+      label,
+      link
+    },
+    {{/if}}
+    {{#if (eq template "card-list")}}
+    heading,
+    cards[] {
+      title,
+      description,
+      "image": image.asset->url,
+      "imageAlt": image.alt,
+      link
+    },
+    {{/if}}
+    {{#if (eq template "testimonial")}}
+    quote,
+    author {
+      name,
+      title,
+      company
+    },
+    "image": image.asset->url,
+    "imageAlt": image.alt,
+    {{/if}}
+  }
+`
+
+// Example usage in a page query:
+// export const pageQuery = groq`
+//   *[_type == "page" && slug.current == $slug][0]{
+//     title,
+//     blocks[]{
+//       ${heroFragment},
+//       ${otherBlockFragment}
+//     }
+//   }
+// ` 

@@ -1,0 +1,30 @@
+{{! component.tsx.hbs }}
+import { cn } from '@company/ui/utils'
+import type { {{pascalCase name}}SectionProps } from './{{kebabCase name}}.types'
+
+export const {{pascalCase name}}Section = ({ 
+  heading, 
+  subheading,
+  {{#if hasImage}}image,{{/if}}
+  className 
+}: {{pascalCase name}}SectionProps) => {
+  return (
+    <section className={cn('py-16', className)}>
+      <div className="container">
+        <h2 className="text-4xl font-bold">{heading}</h2>
+        {subheading && (
+          <p className="mt-4 text-lg text-muted-foreground">{subheading}</p>
+        )}
+        {{#if hasImage}}
+        {image && (
+          <img 
+            src={image} 
+            alt={heading} 
+            className="mt-8 rounded-lg"
+          />
+        )}
+        {{/if}}
+      </div>
+    </section>
+  )
+}

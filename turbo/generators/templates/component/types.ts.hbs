@@ -1,0 +1,124 @@
+{{#if (eq template "basic")}}
+export interface {{pascalCase name}}ComponentProps {
+  heading: string
+  text?: string
+  className?: string
+}
+
+export interface {{pascalCase name}}Schema {
+  _type: '{{kebabCase name}}'
+  _key?: string
+  heading: string
+  text?: string
+}
+{{/if}}
+
+{{#if (eq template "hero")}}
+export interface {{pascalCase name}}ComponentProps {
+  heading: string
+  subheading?: string
+  image?: string
+  imageAlt?: string
+  cta?: {
+    label: string
+    link: string
+  }
+  className?: string
+}
+
+export interface {{pascalCase name}}Schema {
+  _type: '{{kebabCase name}}'
+  _key?: string
+  heading: string
+  subheading?: string
+  image?: {
+    asset: {
+      url: string
+    }
+    alt: string
+  }
+  cta?: {
+    label: string
+    link: string
+  }
+}
+{{/if}}
+
+{{#if (eq template "card-list")}}
+export interface Card {
+  title: string
+  description?: string
+  image?: string
+  imageAlt?: string
+  link?: string
+}
+
+export interface {{pascalCase name}}ComponentProps {
+  heading: string
+  cards: Card[]
+  className?: string
+}
+
+export interface {{pascalCase name}}Schema {
+  _type: '{{kebabCase name}}'
+  _key?: string
+  heading: string
+  cards: Array<{
+    title: string
+    description?: string
+    image?: {
+      asset: {
+        url: string
+      }
+      alt?: string
+    }
+    link?: string
+  }>
+}
+{{/if}}
+
+{{#if (eq template "testimonial")}}
+export interface {{pascalCase name}}ComponentProps {
+  quote: string
+  author: {
+    name: string
+    title?: string
+    company?: string
+  }
+  image?: string
+  imageAlt?: string
+  className?: string
+}
+
+export interface {{pascalCase name}}Schema {
+  _type: '{{kebabCase name}}'
+  _key?: string
+  quote: string
+  author: {
+    name: string
+    title?: string
+    company?: string
+  }
+  image?: {
+    asset: {
+      url: string
+    }
+    alt?: string
+  }
+}
+{{/if}}
+
+{{#if (eq template "custom")}}
+// Define your component props interface here
+export interface {{pascalCase name}}ComponentProps {
+  // Add your props here
+  className?: string
+}
+
+// Define your schema interface here
+export interface {{pascalCase name}}Schema {
+  _type: '{{kebabCase name}}'
+  _key?: string
+  // Add your schema fields here
+}
+{{/if}} 

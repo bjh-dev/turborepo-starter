@@ -1,0 +1,131 @@
+import { cn } from '@repo/ui/utils'
+import type { {{pascalCase name}}ComponentProps } from './{{kebabCase name}}.types'
+
+export function {{pascalCase name}}Component({ 
+  {{#if (eq template "basic")}}
+  heading, 
+  text,
+  {{/if}}
+  {{#if (eq template "hero")}}
+  heading, 
+  subheading,
+  image,
+  imageAlt,
+  cta,
+  {{/if}}
+  {{#if (eq template "card-list")}}
+  heading,
+  cards,
+  {{/if}}
+  {{#if (eq template "testimonial")}}
+  quote,
+  author,
+  image,
+  imageAlt,
+  {{/if}}
+  className 
+}: {{pascalCase name}}ComponentProps) {
+  return (
+    <section className={cn('py-16', className)}>
+      <div className="container mx-auto px-4">
+        {{#if (eq template "basic")}}
+        <h2 className="text-4xl font-bold mb-4">{heading}</h2>
+        {text && (
+          <p className="text-lg text-muted-foreground">{text}</p>
+        )}
+        {{/if}}
+
+        {{#if (eq template "hero")}}
+        <div className="text-center">
+          <h1 className="text-6xl font-bold mb-6">{heading}</h1>
+          {subheading && (
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">{subheading}</p>
+          )}
+          {image && (
+            <div className="mb-8">
+              <img 
+                src={image} 
+                alt={imageAlt || heading} 
+                className="mx-auto rounded-lg shadow-lg"
+              />
+            </div>
+          )}
+          {cta && (
+            <a 
+              href={cta.link}
+              className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors"
+            >
+              {cta.label}
+            </a>
+          )}
+        </div>
+        {{/if}}
+
+        {{#if (eq template "card-list")}}
+        <h2 className="text-4xl font-bold mb-8 text-center">{heading}</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {cards.map((card, index) => (
+            <div key={index} className="bg-card border rounded-lg p-6 hover:shadow-lg transition-shadow">
+              {card.image && (
+                <img 
+                  src={card.image} 
+                  alt={card.imageAlt || card.title} 
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+              )}
+              <h3 className="text-xl font-semibold mb-2">{card.title}</h3>
+              {card.description && (
+                <p className="text-muted-foreground mb-4">{card.description}</p>
+              )}
+              {card.link && (
+                <a 
+                  href={card.link}
+                  className="text-primary hover:underline font-medium"
+                >
+                  Learn more →
+                </a>
+              )}
+            </div>
+          ))}
+        </div>
+        {{/if}}
+
+        {{#if (eq template "testimonial")}}
+        <div className="max-w-4xl mx-auto text-center">
+          <blockquote className="text-2xl font-medium mb-6 italic">
+            "{quote}"
+          </blockquote>
+          <div className="flex items-center justify-center gap-4">
+            {image && (
+              <img 
+                src={image} 
+                alt={imageAlt || author.name} 
+                className="w-16 h-16 rounded-full object-cover"
+              />
+            )}
+            <div className="text-left">
+              <p className="font-semibold">{author.name}</p>
+              {author.title && (
+                <p className="text-sm text-muted-foreground">{author.title}</p>
+              )}
+              {author.company && (
+                <p className="text-sm text-muted-foreground">{author.company}</p>
+              )}
+            </div>
+          </div>
+        </div>
+        {{/if}}
+
+        {{#if (eq template "custom")}}
+        {/* Add your component content here */}
+        <div className="text-center">
+          <h2 className="text-4xl font-bold">Custom Component</h2>
+          <p className="text-lg text-muted-foreground mt-4">
+            This is a custom component template. Add your content here.
+          </p>
+        </div>
+        {{/if}}
+      </div>
+    </section>
+  )
+} 
