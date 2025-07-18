@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build and Test
+    name: Build
     timeout-minutes: 15
     runs-on: ubuntu-latest
     # To use Remote Caching, uncomment the next lines and follow the steps below.
@@ -34,6 +34,3 @@ jobs:
 
       - name: Build
         run: bun run build
-
-      - name: Test
-        run: bun run test

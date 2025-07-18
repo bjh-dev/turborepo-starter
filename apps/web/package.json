@@ -6,8 +6,7 @@
 		"dev": "next dev --turbopack",
 		"build": "next build",
 		"start": "next start",
-		"check-types": "tsc --noEmit",
-		"test": "echo \"No tests specified for web app\""
+		"check-types": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@repo/ui": "*",

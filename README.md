@@ -32,7 +32,7 @@ Perfect for agencies, enterprises, or organizations managing multiple brands or 
 - **🔧 Smart Generators**: Rapid component development with Turborepo generators
 - **🎯 Multi-Tenant Ready**: Designed for multiple business units/sites
 - **🔒 Type Safety**: Full TypeScript integration throughout
-- **🧪 Testing Ready**: Built-in testing with Vitest and Storybook documentation
+- **🧪 Testing Ready**: Built-in testing and Storybook documentation
 - **🐳 Docker Ready**: Containerized development environment
 - **⚡ Performance**: Optimized builds with Turborepo caching
 

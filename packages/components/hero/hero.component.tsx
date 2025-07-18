@@ -1,7 +1,7 @@
 import { cn } from '@repo/ui/lib/utils';
 import { HeroComponentProps } from 'hero/hero.types.js';
 
-export const HeroComponent = ({ heading, subheading, image, imageAlt, cta, className }: HeroComponentProps) => {
+export const  HeroComponent: React.FC<HeroComponentProps> = ({ heading, subheading, image, imageAlt, cta, className }) => {
 	return (
 		<section className={cn('py-16', className)}>
 			<div className="container mx-auto px-4">

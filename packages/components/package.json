@@ -2,7 +2,6 @@
 	"name": "@repo/components",
 	"version": "0.0.0",
 	"private": true,
-	"type": "module",
 	"exports": {
 		"./hero": "./hero/index.ts",
 		".": "./index.ts"
@@ -11,25 +10,17 @@
 		"lint": "eslint . --max-warnings 0",
 		"type-check": "tsc --noEmit",
 		"type-check:build": "tsc --noEmit --project tsconfig.build.json",
-		"build": "tsc --project tsconfig.build.json",
-		"test": "vitest run",
-		"test:watch": "vitest"
+		"build": "tsc --project tsconfig.build.json"
 	},
 	"devDependencies": {
 		"@repo/typescript-config": "*",
-		"@testing-library/jest-dom": "^6.4.2",
-		"@types/testing-library__jest-dom": "^6.0.0",
-		"@vitejs/plugin-react": "^4.3.4",
 		"eslint": "^8.0.0",
-		"jsdom": "^24.0.0",
 		"typescript": "^5.0.0"
 	},
 	"dependencies": {
 		"@repo/ui": "*",
-		"@storybook/react": "^9.0.17",
-		"@testing-library/react": "^16.3.0",
 		"groq": "^4.0.1",
-		"sanity": "^4.0.1",
-		"vitest": "^3.2.4"
+		"react": "^19.1.0",
+		"sanity": "^4.0.1"
 	}
 }

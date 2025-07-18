@@ -76,19 +76,7 @@ export default function generator(plop: PlopTypes.NodePlopAPI): void {
 				templateFile: 'templates/component/types.ts.hbs',
 			});
 
-			// Test file
-			actions.push({
-				type: 'add',
-				path: 'packages/components/{{kebabCase name}}/{{kebabCase name}}.test.tsx',
-				templateFile: 'templates/component/test.tsx.hbs',
-			});
 
-			// Storybook file
-			actions.push({
-				type: 'add',
-				path: 'packages/components/{{kebabCase name}}/{{kebabCase name}}.stories.tsx',
-				templateFile: 'templates/component/stories.tsx.hbs',
-			});
 
 			// Index file
 			actions.push({

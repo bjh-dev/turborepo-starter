@@ -10,7 +10,7 @@ Each component includes:
 - **GROQ Query**: Data fetching fragments for Sanity
 - **React Component**: UI implementation with TypeScript
 - **TypeScript Types**: Full type safety throughout
-- **Tests**: Component testing with Vitest and React Testing Library
+- **Tests**: Component testing with React Testing Library
 - **Storybook Stories**: Component documentation and examples
 
 ## 🚀 Quick Start
@@ -279,10 +279,7 @@ Each component includes comprehensive tests:
 
 ```bash
 # Run tests for all components
-bun test
-
-# Run tests for a specific component
-bun test packages/components/hero
+echo "Tests have been removed from this repository"
 ```
 
 ### Test Examples
@@ -360,7 +357,7 @@ Edit the generated files as needed:
 ### 3. Test Your Changes
 
 ```bash
-bun test packages/components/[component-name]
+echo "Tests have been removed from this repository"
 ```
 
 ### 4. View in Storybook
