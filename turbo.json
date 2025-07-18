@@ -23,6 +23,6 @@
 			"persistent": true
 		}
 	},
-	"globalDependencies": ["package.json", "pnpm-lock.yaml"],
+	"globalDependencies": ["package.json", "bun.lock"],
 	"globalEnv": ["NODE_ENV"]
 }

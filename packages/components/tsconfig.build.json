@@ -1,0 +1,30 @@
+{
+	"extends": "@repo/typescript-config/nextjs.json",
+	"compilerOptions": {
+		"outDir": "dist",
+		"rootDir": ".",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		},
+		"skipLibCheck": true
+	},
+	"include": [
+		"**/*.component.tsx",
+		"**/*.types.ts",
+		"**/*.schema.ts",
+		"**/*.query.ts",
+		"**/*.index.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"dist",
+		"**/*.test.ts",
+		"**/*.test.tsx",
+		"**/*.stories.tsx",
+		"vitest.config.ts",
+		"vitest.setup.ts",
+		"**/vitest.setup.ts",
+		"**/vitest.config.ts"
+	]
+} 

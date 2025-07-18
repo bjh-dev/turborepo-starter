@@ -9,5 +9,15 @@
 		}
 	},
 	"include": ["**/*.ts", "**/*.tsx"],
-	"exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx", "**/*.stories.tsx", "vitest.config.ts", "vitest.setup.ts"]
+	"exclude": [
+		"node_modules", 
+		"dist", 
+		"**/*.test.ts", 
+		"**/*.test.tsx", 
+		"**/*.stories.tsx", 
+		"vitest.config.ts", 
+		"vitest.setup.ts",
+		"**/vitest.setup.ts",
+		"**/vitest.config.ts"
+	]
 }
