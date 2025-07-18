@@ -9,7 +9,7 @@ Each component includes:
 - **GROQ Query**: Data fetching fragments for Sanity
 - **React Component**: UI implementation with TypeScript
 - **TypeScript Types**: Full type safety throughout
-- **Tests**: Component testing with React Testing Library
+- **Tests**: Component testing with Vitest and React Testing Library
 - **Storybook Stories**: Component documentation and examples
 
 ## 🚀 Quick Start
@@ -17,7 +17,7 @@ Each component includes:
 ### Generate a New Component
 
 ```bash
-pnpm turbo gen component
+bun turbo gen component
 ```
 
 Follow the prompts to:
@@ -49,19 +49,7 @@ export default function HomePage() {
 
 ## 📋 Available Templates
 
-### Basic Template
-Simple heading and text content - perfect for introductory sections.
-
-```tsx
-<BasicComponent 
-  heading="Welcome" 
-  text="This is a simple component" 
-/>
-```
-
-**Fields**: `heading` (required), `text` (optional)
-
-### Hero Template
+### Hero Template ✅ Available
 Full hero section with heading, subheading, background image, and call-to-action button.
 
 ```tsx
@@ -75,6 +63,18 @@ Full hero section with heading, subheading, background image, and call-to-action
 ```
 
 **Fields**: `heading` (required), `subheading`, `image` (with alt text), `cta` (label + link)
+
+### Basic Template
+Simple heading and text content - perfect for introductory sections.
+
+```tsx
+<BasicComponent 
+  heading="Welcome" 
+  text="This is a simple component" 
+/>
+```
+
+**Fields**: `heading` (required), `text` (optional)
 
 ### Card List Template
 Section with a heading and an array of cards, each with title, description, image, and link.
@@ -272,10 +272,10 @@ Each component includes comprehensive tests:
 
 ```bash
 # Run tests for all components
-pnpm test
+bun test
 
 # Run tests for a specific component
-pnpm test packages/components/hero
+bun test packages/components/hero
 ```
 
 ### Test Examples
@@ -306,10 +306,10 @@ Each component includes Storybook stories for documentation:
 
 ```bash
 # Start Storybook
-pnpm storybook
+bun storybook
 
 # Build Storybook
-pnpm build-storybook
+bun build-storybook
 ```
 
 ### Story Examples
@@ -336,7 +336,7 @@ export const WithoutImage: Story = {
 
 ### 1. Generate Component
 ```bash
-pnpm turbo gen component
+bun turbo gen component
 # Follow prompts
 ```
 
@@ -349,12 +349,12 @@ Edit the generated files as needed:
 
 ### 3. Test Your Changes
 ```bash
-pnpm test packages/components/[component-name]
+bun test packages/components/[component-name]
 ```
 
 ### 4. View in Storybook
 ```bash
-pnpm storybook
+bun storybook
 # Navigate to your component
 ```
 
@@ -390,7 +390,7 @@ import { YourComponent } from '@repo/components/[component-name]'
 **TypeScript Errors**
 ```bash
 # Check types
-pnpm type-check
+bun type-check
 
 # Fix type issues in component files
 ```
@@ -398,20 +398,20 @@ pnpm type-check
 **Missing Dependencies**
 ```bash
 # Install missing packages
-pnpm install
+bun install
 
 # Check workspace dependencies
-pnpm list --depth=0
+bun pm ls --depth=0
 ```
 
 **Generator Issues**
 ```bash
 # Clear cache and reinstall
-pnpm clean
-pnpm install
+bun clean
+bun install
 
 # Regenerate component
-pnpm turbo gen component
+bun turbo gen component
 ```
 
 ### Getting Help
