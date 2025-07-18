@@ -3,9 +3,9 @@ name: CI
 # Trigger the workflow on push and pull requests to the main branch
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 # Jobs to run
 jobs:
@@ -31,18 +31,18 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20.19.2
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
+        run: bun install --frozen-lockfile
 
       # Run Biome linting and formatting checks
       - name: Lint and Format Check
-        run: pnpm biome check --line-ending=lf .
+        run: bun run biome check --line-ending=lf .
 
       # Run TypeScript type checking via Turborepo
       - name: Type Check
-        run: pnpm check-types
+        run: bun run check-types
 
       # Build the Next.js app via Turborepo
       - name: Build
