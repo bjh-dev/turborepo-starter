@@ -10,15 +10,24 @@ on:
 # Jobs to run
 jobs:
   build:
+    name: Build and Test
     runs-on: ubuntu-latest
     env:
-      NEXT_TELEMETRY_DISABLED: 1
-      DO_NOT_TRACK: 1
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
     steps:
       # Checkout the repository
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Cache turbo build setup
+        uses: actions/cache@v4
+        with:
+          path: .turbo
+          key: ${{ runner.os }}-turbo-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-
 
       # Install Bun
       - name: Install Bun
@@ -30,20 +39,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.19.2
-
-      # Setup Turborepo cache
-      - name: Setup Turborepo Cache
-        uses: actions/cache@v4
-        with:
-          path: .turbo
-          key: ${{ runner.os }}-turbo-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-turbo-
+          node-version: 20.17.0
 
       # Install Dependencies
       - name: Install Dependencies
-        run: bun install --frozen-lockfile
+        run: bun install
 
       # Run Biome linting and formatting checks
       - name: Lint and Format Check
