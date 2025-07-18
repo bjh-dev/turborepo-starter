@@ -274,7 +274,7 @@ export default function Home() {
 											</span>
 										</div>
 										<div className="text-foreground">
-											$ <span className="text-blue-600 dark:text-blue-400">cd turbo-starter</span>
+											$ <span className="text-blue-600 dark:text-blue-400">cd turborepo-starter</span>
 										</div>
 										<div className="text-foreground">
 											$ <span className="text-blue-600 dark:text-blue-400">pnpm install</span>

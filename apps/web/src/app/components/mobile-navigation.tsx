@@ -50,7 +50,7 @@ export default function MobileNavigation() {
 
 						<div className="border-t border-border pt-4 mt-6">
 							<Link
-								href="https://github.com/ProductOfAmerica/turbo-starter"
+								href="https://github.com/bjh-dev/turborepo-starter"
 								target="_blank"
 								className="flex items-center space-x-3 text-lg text-muted-foreground hover:text-foreground transition-colors py-2"
 								onClick={handleLinkClick}
