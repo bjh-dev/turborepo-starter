@@ -14,14 +14,14 @@
 			"cache": false,
 			"persistent": true
 		},
+		"test": {
+			"dependsOn": ["^build"]
+		},
 		"start": {
 			"dependsOn": ["build"],
 			"cache": false,
 			"persistent": true
-		},
-		"//#format-write": { "cache": false },
-		"//#lint": {},
-		"//#lint:fix": { "cache": false }
+		}
 	},
 	"globalDependencies": ["package.json", "pnpm-lock.yaml"],
 	"globalEnv": ["NODE_ENV"]
