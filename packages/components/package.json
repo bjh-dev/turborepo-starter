@@ -8,9 +8,7 @@
 	},
 	"scripts": {
 		"lint": "eslint . --max-warnings 0",
-		"type-check": "tsc --noEmit",
-		"type-check:build": "tsc --noEmit --project tsconfig.build.json",
-		"build": "tsc --project tsconfig.build.json"
+		"type-check": "tsc --noEmit"
 	},
 	"devDependencies": {
 		"@repo/typescript-config": "*",
